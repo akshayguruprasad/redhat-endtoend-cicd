@@ -69,8 +69,8 @@ podTemplate(
 
       stage('Publish artifact to Nexus') {
         
-        def NEXUS_URL ="http://nexus3-7a9c-nexus.apps.na311.openshift.opentlc.com/#admin/repository/repositories:releases"
-          //def NEXUS_URL = "http://nexus3-${GUID}-nexus.apps.${CLUSTER}/repository/releases"
+        def NEXUS_URL ="http://nexus3-7a9c-nexus.apps.na311.openshift.opentlc.com/repository/releases/"
+         // def NEXUS_URL = "http://nexus3-${GUID}-nexus.apps.${CLUSTER}/repository/releases"
           sh "${mvnCmd} deploy -DskipTests=true -DaltDeploymentRepository=nexus::default::${NEXUS_URL}"
       }
 
